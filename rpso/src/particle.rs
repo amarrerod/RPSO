@@ -8,11 +8,13 @@ pub struct Particle {
 }
 
 impl Particle {
-    fn new() -> Particle {
+    pub fn new(dim: usize) -> Particle {
         Particle {
             fitness: 0.0,
             best_fitness: 0.0,
-            ..Default::default()
+            best: vec![0.0; dim],
+            position: vec![0.0; dim],
+            velocity: vec![0.0; dim],
         }
     }
 }
